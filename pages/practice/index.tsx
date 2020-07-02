@@ -10,6 +10,7 @@ import css from './index.module.scss';
 
 function PracticePage() {
   const { query } = useRouter();
+  const key = query.type === 'random' ? 'random' : 'all';
 
   return (
     <div>
@@ -29,7 +30,7 @@ function PracticePage() {
         </Link>
       </div>
 
-      {query.type === 'random' ? <QuestionList size={15} /> : <QuestionList />}
+      {query.type === 'random' ? <QuestionList key={key} size={15} /> : <QuestionList key={key} />}
     </div>
   );
 }
