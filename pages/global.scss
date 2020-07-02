@@ -1,0 +1,70 @@
+@import "~normalize.css/normalize.css";
+
+html {
+  font-family: system-ui, sans-serif;
+  box-sizing: border-box;
+  color: rgba(#000, 0.87);
+  line-height: 1.5;
+}
+
+body {
+  transition: background 0.5s, color 0.5s;
+
+  &[data-dark-mode] {
+    background: #121212;
+    color: rgba(#fff, 0.87);
+	}
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: justify;
+  font-weight: normal;
+  word-break: break-word;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  margin: 1rem 0;
+  border: 0;
+  border-top: 1px dashed #ddd;
+  transition: border-color 0.5s;
+
+  [data-dark-mode] & {
+    border-color: rgba(#fff, 0.08);
+  }
+}
+
+a {
+  color: #07d;
+  text-decoration: none;
+
+  &:hover {
+    color: #059;
+  }
+}
+
+[id^="chapter-"],
+[id^="section-"] {
+  padding-top: 4rem;
+  margin-top: -4rem;
+}
+
+.route-container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 1.5rem 1rem;
+  margin-top: 3rem;
+
+  @media (max-width: 767px) {
+    padding-bottom: calc(1.5rem + 3.5rem);
+  }
+}

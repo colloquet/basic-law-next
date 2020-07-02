@@ -1,0 +1,44 @@
+.buttonGroup {
+  background: #f5f6f7;
+  border-radius: 8px;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  transition: background 0.5s;
+  will-change: background;
+
+  [data-dark-mode] & {
+    background: #1e1e1e;
+  }
+}
+
+.button {
+  display: inline-block;
+  background: none;
+  border: 0;
+  width: 50%;
+  height: 2rem;
+  line-height: 2rem;
+  padding: 0 1rem;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.5s;
+  color: rgba(#000, 0.6);
+  outline: none;
+  cursor: pointer;
+
+  [data-dark-mode] & {
+    color: rgba(#fff, 0.6);
+  }
+  
+  &.isActive,
+  &:hover {
+    background: #e6e6e6;
+    color: rgba(#000, 0.87);
+    
+    [data-dark-mode] & {
+      background: rgba(#fff, 0.08);
+      color: rgba(#fff, 0.87);
+    }
+  }
+}
