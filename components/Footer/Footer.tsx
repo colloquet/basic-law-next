@@ -15,7 +15,7 @@ function Footer() {
         </a>
         <br />
         Source code available on{' '}
-        <a href="https://github.com/colloquet/basic-law" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/colloquet/basic-law-next" target="_blank" rel="noopener noreferrer">
           GitHub
         </a>
       </p>
