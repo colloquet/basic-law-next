@@ -53,9 +53,21 @@ export default function HomePage() {
           {basicLawData.map((node: TextNode) => {
             switch (node.type) {
               case 'chapter-title':
-                return <ChapterTitleNode key={node.id} id={node.id} text={node.text} />;
+                return (
+                  <ChapterTitleNode
+                    key={node.id}
+                    id={node.id}
+                    text={node.text}
+                  />
+                );
               case 'section-title':
-                return <SectionTitleNode key={node.id} id={node.id} text={node.text} />;
+                return (
+                  <SectionTitleNode
+                    key={node.id}
+                    id={node.id}
+                    text={node.text}
+                  />
+                );
               case 'subtitle':
                 return <SubtitleNode key={node.id} text={node.text} />;
               case 'paragraph':
@@ -70,14 +82,28 @@ export default function HomePage() {
           })}
         </div>
 
-        <div className={`${css.sidebarContainer} ${sidebarVisible ? css.visible : ''}`}>
-          {isMobile && <PageTitle style={{ padding: '0.4rem .8rem', marginBottom: '0.5rem' }}>目錄</PageTitle>}
+        <div
+          className={`${css.sidebarContainer} ${
+            sidebarVisible ? css.visible : ''
+          }`}
+        >
+          {isMobile && (
+            <PageTitle
+              style={{ padding: '0.4rem .8rem', marginBottom: '0.5rem' }}
+            >
+              目錄
+            </PageTitle>
+          )}
           <Sidebar onClick={handleSidebarClick} />
         </div>
       </div>
 
       {isMobile && (
-        <button className={css.menuButton} aria-label="目錄" onClick={handleMenuClick}>
+        <button
+          className={css.menuButton}
+          aria-label="目錄"
+          onClick={handleMenuClick}
+        >
           {sidebarVisible ? <X /> : <Menu />}
         </button>
       )}

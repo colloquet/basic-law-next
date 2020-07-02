@@ -36,7 +36,8 @@ class TopAppBar extends React.PureComponent<Props, State> {
     };
 
     this.appBar = React.createRef();
-    this.lastScrollPosition = typeof window === 'undefined' ? 0 : window.scrollY;
+    this.lastScrollPosition =
+      typeof window === 'undefined' ? 0 : window.scrollY;
     this.topAppBarHeight = 0;
     this.wasDocked = true;
     this.isDockedShowing = true;
@@ -81,7 +82,8 @@ class TopAppBar extends React.PureComponent<Props, State> {
   checkForUpdate = () => {
     const offscreenBoundaryTop = -this.topAppBarHeight;
     const hasAnyPixelsOffscreen = this.currentAppBarOffsetTop < 0;
-    const hasAnyPixelsOnscreen = this.currentAppBarOffsetTop > offscreenBoundaryTop;
+    const hasAnyPixelsOnscreen =
+      this.currentAppBarOffsetTop > offscreenBoundaryTop;
     const partiallyShowing = hasAnyPixelsOffscreen && hasAnyPixelsOnscreen;
 
     if (partiallyShowing) {
@@ -133,7 +135,11 @@ class TopAppBar extends React.PureComponent<Props, State> {
     const { children, zIndex } = this.props;
 
     return (
-      <div ref={this.appBar} style={{ zIndex, top: `${top}px` }} className={styles.container}>
+      <div
+        ref={this.appBar}
+        style={{ zIndex, top: `${top}px` }}
+        className={styles.container}
+      >
         {children}
       </div>
     );

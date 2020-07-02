@@ -9,7 +9,14 @@ interface Props extends LinkProps {
   exact?: boolean;
 }
 
-function NavLink({ children, href, className, activeClassName, exact, ...props }: Props) {
+function NavLink({
+  children,
+  href,
+  className,
+  activeClassName,
+  exact,
+  ...props
+}: Props) {
   const router = useRouter();
 
   const isActive = useMemo(() => {
@@ -23,7 +30,9 @@ function NavLink({ children, href, className, activeClassName, exact, ...props }
 
   return (
     <Link href={href} {...props}>
-      <a className={`${className} ${isActive ? activeClassName : ''}`}>{children}</a>
+      <a className={`${className} ${isActive ? activeClassName : ''}`}>
+        {children}
+      </a>
     </Link>
   );
 }

@@ -27,10 +27,22 @@ function PracticePage({ questions }: Props) {
 
       <div className={css.buttonGroup}>
         <Link href="/practice">
-          <button className={`${css.button} ${pathname === '/practice' ? css.isActive : ''}`}>全部問題</button>
+          <button
+            className={`${css.button} ${
+              pathname === '/practice' ? css.isActive : ''
+            }`}
+          >
+            全部問題
+          </button>
         </Link>
         <Link href="/practice/random">
-          <button className={`${css.button} ${pathname === '/practice/random' ? css.isActive : ''}`}>隨機15條</button>
+          <button
+            className={`${css.button} ${
+              pathname === '/practice/random' ? css.isActive : ''
+            }`}
+          >
+            隨機15條
+          </button>
         </Link>
       </div>
 

@@ -13,21 +13,31 @@ const nodeListToArray = (nodeList) => {
 };
 
 const titleList = basicLawData
-  .filter((node) => node.type === 'chapter-title' || node.type === 'section-title')
+  .filter(
+    (node) => node.type === 'chapter-title' || node.type === 'section-title',
+  )
   .map((node) => ({
     id: `${node.type === 'chapter-title' ? 'chapter' : 'section'}-${node.id}`,
     isSection: node.type === 'section-title',
-    anchor: `#${node.type === 'chapter-title' ? 'chapter' : 'section'}-${node.id}`,
+    anchor: `#${node.type === 'chapter-title' ? 'chapter' : 'section'}-${
+      node.id
+    }`,
     label: node.text,
   }));
 
-function Sidebar({ onClick }: { onClick: (event: React.MouseEvent<HTMLAnchorElement>) => void }) {
+function Sidebar({
+  onClick,
+}: {
+  onClick: (event: React.MouseEvent<HTMLAnchorElement>) => void;
+}) {
   const container = useRef(null);
   const { width } = useWindowSize();
 
   useEffect(() => {
-    const titleNodes = titleList.map((title) => (typeof document === 'undefined' ? [] : document.getElementById(title.id)));
-    
+    const titleNodes = titleList.map((title) =>
+      typeof document === 'undefined' ? [] : document.getElementById(title.id),
+    );
+
     const offsetTopById = nodeListToArray(titleNodes).reduce(
       (all, chapter) => ({
         ...all,
@@ -37,7 +47,9 @@ function Sidebar({ onClick }: { onClick: (event: React.MouseEvent<HTMLAnchorElem
     );
 
     const scrollHandler = () => {
-      const scrollPosition = (document.documentElement && document.documentElement.scrollTop) || (document.body && document.body.scrollTop);
+      const scrollPosition =
+        (document.documentElement && document.documentElement.scrollTop) ||
+        (document.body && document.body.scrollTop);
       const ids = Object.keys(offsetTopById);
 
       let last = titleList[0].id;
@@ -67,7 +79,12 @@ function Sidebar({ onClick }: { onClick: (event: React.MouseEvent<HTMLAnchorElem
     <div ref={container} className={css.container} data-list>
       <ul className={css.list}>
         {titleList.map((title) => (
-          <li key={title.anchor} className={`${css.listItem} ${title.isSection ? css.isSection : ''}`}>
+          <li
+            key={title.anchor}
+            className={`${css.listItem} ${
+              title.isSection ? css.isSection : ''
+            }`}
+          >
             <a href={title.anchor} onClick={onClick}>
               {title.label}
             </a>
