@@ -93,7 +93,7 @@
   align-items: center;
   justify-content: center;
   z-index: 3;
-  transition: all 0.5s;
+  transition: background 0.5s, color 0.5s;
 
   [data-dark-mode] & {
     background: #1e1e1e;

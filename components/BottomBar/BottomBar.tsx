@@ -7,7 +7,7 @@ import NavLink from '@/components/NavLink/NavLink';
 function BottomBar() {
   return (
     <div className={css.container}>
-      <NavLink href="/" className={css.navItem} activeClassName={css.active}>
+      <NavLink href="/" exact className={css.navItem} activeClassName={css.active}>
         <BookOpen size="24" />
         <span>全文</span>
       </NavLink>

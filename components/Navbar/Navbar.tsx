@@ -23,7 +23,7 @@ function Navbar() {
             {darkMode ? <Sun size={18} /> : <Moon size={18} />}
           </button>
           <div className={css.navbarRight}>
-            <NavLink href="/" className={css.navLink} activeClassName={css.isActive}>
+            <NavLink href="/" exact className={css.navLink} activeClassName={css.isActive}>
               基本法全文
             </NavLink>
             <NavLink href="/practice" className={css.navLink} activeClassName={css.isActive}>

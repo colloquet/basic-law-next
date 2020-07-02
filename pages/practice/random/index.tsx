@@ -7,21 +7,23 @@ import Head from 'next/head';
 import allQuestions from '@/assets/questions.json';
 import PageTitle from '@/components/PageTitle/PageTitle';
 import QuestionList from '@/components/QuestionList/QuestionList';
-import { shuffle } from '../../utils';
-import css from './index.module.scss';
+import { shuffle } from '../../../utils';
+import css from '../index.module.scss';
 
 export const getServerSideProps: GetServerSideProps = async () => {
   return {
     props: {
-      questions: shuffle(allQuestions).map((question) => ({
-        ...question,
-        answers: shuffle(question.answers),
-      })),
+      questions: shuffle(allQuestions)
+        .slice(0, 15)
+        .map((question) => ({
+          ...question,
+          answers: shuffle(question.answers),
+        })),
     },
   };
 };
 
-function PracticePage({ questions }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+function PracticeRandomPage({ questions }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const { pathname } = useRouter();
 
   return (
@@ -53,4 +55,4 @@ function PracticePage({ questions }: InferGetServerSidePropsType<typeof getServe
   );
 }
 
-export default PracticePage;
+export default PracticeRandomPage;

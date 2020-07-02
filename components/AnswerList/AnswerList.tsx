@@ -1,27 +1,30 @@
 import React, { useMemo } from 'react';
 import { Check, X } from 'react-feather';
 
-import { shuffle } from '../../utils';
 import css from './AnswerList.module.scss';
 
 interface Props {
   qIndex: number;
-  list: Array<{
+  answers: Array<{
     text: string;
     correct: boolean;
   }>;
 }
 
-function AnswerList({ qIndex, list }: Props) {
-  const answers = useMemo(() => shuffle(list), [list]);
-
+function AnswerList({ qIndex, answers }: Props) {
   return (
     <ul className={css.list}>
       {answers.map((answer, aIndex) => {
         const id = `question-${qIndex}-answer-${aIndex}`;
         return (
           <li key={id} className={css.listItem}>
-            <input type="radio" id={id} className={css.radio} name={`question-${qIndex}`} data-correct={answer.correct} />
+            <input
+              type="radio"
+              id={id}
+              className={css.radio}
+              name={`question-${qIndex}`}
+              data-correct={answer.correct}
+            />
             <label htmlFor={id} className={css.label}>
               {answer.text}
             </label>
