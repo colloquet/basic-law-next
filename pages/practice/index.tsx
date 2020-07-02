@@ -1,5 +1,4 @@
 import React from 'react';
-import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
@@ -10,18 +9,11 @@ import QuestionList from '@/components/QuestionList/QuestionList';
 import { shuffle } from '../../utils';
 import css from './index.module.scss';
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  return {
-    props: {
-      questions: shuffle(allQuestions).map((question) => ({
-        ...question,
-        answers: shuffle(question.answers),
-      })),
-    },
-  };
-};
+interface Props {
+  questions: any[];
+}
 
-function PracticePage({ questions }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+function PracticePage({ questions }: Props) {
   const { pathname } = useRouter();
 
   return (
@@ -35,16 +27,10 @@ function PracticePage({ questions }: InferGetServerSidePropsType<typeof getServe
 
       <div className={css.buttonGroup}>
         <Link href="/practice">
-          <button className={`${css.button} ${pathname === '/practice' ? css.isActive : ''}`}>
-            全部問題
-          </button>
+          <button className={`${css.button} ${pathname === '/practice' ? css.isActive : ''}`}>全部問題</button>
         </Link>
         <Link href="/practice/random">
-          <button
-            className={`${css.button} ${pathname === '/practice/random' ? css.isActive : ''}`}
-          >
-            隨機15條
-          </button>
+          <button className={`${css.button} ${pathname === '/practice/random' ? css.isActive : ''}`}>隨機15條</button>
         </Link>
       </div>
 
@@ -52,5 +38,14 @@ function PracticePage({ questions }: InferGetServerSidePropsType<typeof getServe
     </div>
   );
 }
+
+PracticePage.getInitialProps = async () => {
+  return {
+    questions: shuffle(allQuestions).map((question) => ({
+      ...question,
+      answers: shuffle(question.answers),
+    })),
+  };
+};
 
 export default PracticePage;
