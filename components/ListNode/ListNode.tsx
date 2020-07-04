@@ -1,4 +1,4 @@
-import { TextNode } from 'pages';
+import { TextNode } from '@/types/types';
 import css from './ListNode.module.scss';
 
 interface Props {
