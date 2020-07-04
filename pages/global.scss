@@ -1,19 +1,89 @@
 @import "~normalize.css/normalize.css";
 
+:root {
+  --navbar-bg-color: #e74c3c;
+  --navbar-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --navbar-link-text-color: rgba(255, 255, 255, 0.6);
+  --navbar-link-hover-color: #fff;
+  --navbar-link-indicator-color: rgba(255, 255, 255, 0.87);
+  --navbar-logo-color: #fff;
+  --night-mode-toggle-color: #fff;
+
+  --body-bg-color: #fff;
+  --body-text-color: rgba(0, 0, 0, 0.87);
+
+  --link-color: #07d;
+  --link-hover-color: #059;
+
+  --hr-color: #ddd;
+
+  --bottom-bar-bg-color: #fff;
+  --bottom-bar-text-color: rgba(0, 0, 0, 0.87);
+  --bottom-bar-text-active-color: #e74c3c;
+  --bottom-bar-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+
+  --footer-text-color: rgba(0, 0, 0, 0.38);
+
+  --sidebar-border-color: rgba(189, 189, 189, 0.4);
+  --sidebar-text-color: #5f6368;
+  --sidebar-hover-bg-color: #f5f6f7;
+  --sidebar-hover-text-color: #202124;
+
+  --fab-bg-color: #fff;
+  --fab-text-color: #e74c3c;
+  --fab-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+  --fab-border-color: rgba(0, 0, 0, 0.1);
+
+  --button-group-bg-color: #f5f6f7;
+  --button-group-text-color: rgba(0, 0, 0, 0.6);
+  --button-group-active-bg-color: #e6e6e6;
+  --button-group-active-text-color: rgba(0, 0, 0, 0.87);
+
+  --correct-color: #27ae60;
+  --incorrect-color: #e74c3c;
+}
+
+[data-dark-mode] {
+  --navbar-bg-color: #1e1e1e;
+  --navbar-link-hover-color: rgba(255, 255, 255, 0.87);
+  --navbar-logo-color: rgba(255, 255, 255, 0.87);
+  --night-mode-toggle-color: rgba(255, 255, 255, 0.87);
+
+  --body-bg-color: #121212;
+  --body-text-color: rgba(255, 255, 255, 0.87);
+
+  --hr-color: rgba(255, 255, 255, 0.08);
+
+  --bottom-bar-bg-color: #1e1e1e;
+  --bottom-bar-text-color: rgba(255, 255, 255, 0.38);
+  --bottom-bar-text-active-color: rgba(255, 255, 255, 0.87);
+
+  --footer-text-color: rgba(255, 255, 255, 0.38);
+
+  --sidebar-border-color: #202124;
+  --sidebar-text-color: rgba(255, 255, 255, 0.38);
+  --sidebar-hover-bg-color: #1e1e1e;
+  --sidebar-hover-text-color: rgba(255, 255, 255, 0.87);
+
+  --fab-bg-color: #1e1e1e;
+  --fab-text-color: rgba(255, 255, 255, 0.87);
+
+  --button-group-bg-color: #1e1e1e;
+  --button-group-text-color: rgba(255, 255, 255, 0.6);
+  --button-group-active-bg-color: rgba(255, 255, 255, 0.08);
+  --button-group-active-text-color: rgba(255, 255, 255, 0.87);
+}
+
 html {
   font-family: system-ui, sans-serif;
   box-sizing: border-box;
-  color: rgba(#000, 0.87);
   line-height: 1.5;
 }
 
 body {
   transition: background 0.5s, color 0.5s;
-
-  &[data-dark-mode] {
-    background: #121212;
-    color: rgba(#fff, 0.87);
-	}
+  background: var(--body-bg-color);
+  color: var(--body-text-color);
 }
 
 *,
@@ -35,20 +105,16 @@ hr {
   height: 0;
   margin: 1rem 0;
   border: 0;
-  border-top: 1px dashed #ddd;
+  border-top: 1px dashed var(--hr-color);
   transition: border-color 0.5s;
-
-  [data-dark-mode] & {
-    border-color: rgba(#fff, 0.08);
-  }
 }
 
 a {
-  color: #07d;
+  color: var(--link-color);
   text-decoration: none;
 
   &:hover {
-    color: #059;
+    color: var(--link-hover-color);
   }
 }
 

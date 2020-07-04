@@ -1,10 +1,11 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 
+import { Question } from '@/types/types';
 import AnswerList from '@/components/AnswerList/AnswerList';
 import css from './QuestionList.module.scss';
 
 interface Props {
-  questions?: any[];
+  questions?: Question[];
 }
 
 function QuestionList({ questions }: Props) {

@@ -3,11 +3,7 @@
   margin: 0;
   padding: 0;
   transition: color 0.5s;
-  color: rgba(#000, 0.87);
-
-  [data-dark-mode] & {
-    color: rgba(#fff, 0.6);
-  }
+  color: var(--body-text-color);
 }
 
 .listItem {
@@ -35,14 +31,14 @@
     &[data-correct='true'] {
       + label,
       ~ svg {
-        color: #27ae60;
+        color: var(--correct-color);
       }
     }
 
     &[data-correct='false'] {
       + label,
       ~ svg {
-        color: #e74c3c;
+        color: var(--incorrect-color);
       }
     }
   }

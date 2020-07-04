@@ -1,8 +1,8 @@
 .container {
   position: fixed;
   display: flex;
-  box-shadow: 0 0 6px rgba(#000, 0.1);
-  background: #fff;
+  box-shadow: var(--bottom-bar-shadow);
+  background: var(--bottom-bar-bg-color);
   bottom: 0;
   left: 0;
   padding-bottom: constant(safe-area-inset-bottom);
@@ -11,10 +11,6 @@
   z-index: 3;
   transition: background 0.5s;
   will-change: background;
-
-  [data-dark-mode] & {
-    background: #1e1e1e;
-  }
 
   @media (min-width: 768px) {
     display: none;
@@ -31,12 +27,8 @@
   text-align: center;
   padding: 0 0.75rem;
   font-size: 0.75rem;
-  color: rgba(#000, 0.87);;
+  color: var(--bottom-bar-text-color);
   transition: color 0.5s;
-
-  [data-dark-mode] & {
-    color: rgba(#fff, 0.38);
-  }
 
   &:hover,
   &:active {
@@ -48,10 +40,6 @@
   }
 
   &.active {
-    color: #e74c3c;
-
-    [data-dark-mode] & {
-      color: rgba(#fff, 0.87);
-    }
+    color: var(--bottom-bar-text-active-color);
   }
 }

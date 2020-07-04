@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 
+import { Question } from '@/types/types';
 import allQuestions from '@/assets/questions.json';
 import PageTitle from '@/components/PageTitle/PageTitle';
 import QuestionList from '@/components/QuestionList/QuestionList';
@@ -10,7 +11,7 @@ import { shuffle } from '../../../utils';
 import css from '../index.module.scss';
 
 interface Props {
-  questions: any[];
+  questions: Question[];
 }
 
 function PracticeRandomPage({ questions }: Props) {

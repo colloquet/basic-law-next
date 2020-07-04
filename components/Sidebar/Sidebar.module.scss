@@ -40,37 +40,22 @@
 
   > a {
     display: block;
-    border-left: 2px solid rgba(#bdbdbd, 0.4);
+    border-left: 2px solid var(--sidebar-border-color);
     padding: 0.4rem 1rem;
     text-decoration: none;
-    color: #5f6368;
+    color: var(--sidebar-text-color);
     font-size: 1rem;
     transition: color 0.5s, border-color 0.5s;
     
-    [data-dark-mode] & {
-      border-left-color: #202124;
-      color: rgba(#fff, 0.38);
-    }
-
     &:hover {
-      background: #f5f6f7;
-      color: #202124;
-
-      [data-dark-mode] & {
-        background: #1e1e1e;
-        color: rgba(#fff, 0.87);
-      }
+      background: var(--sidebar-hover-bg-color);
+      color: var(--sidebar-hover-text-color);
     }
 
     &[data-is-active] {
-      border-left-color: #202124;
-      color: #202124;
+      border-left-color: var(--sidebar-hover-text-color);
+      color: var(--sidebar-hover-text-color);
       font-weight: bold;
-
-      [data-dark-mode] & {
-        border-left-color: rgba(#fff, 0.87);
-        color: rgba(#fff, 0.87);
-      }
     }
   }
 

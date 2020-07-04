@@ -1,12 +1,8 @@
 .wrapper {
-  box-shadow: 0 4px 6px rgba(#000, 0.1);
-  background: #e74c3c;
+  box-shadow: var(--navbar-shadow);
+  background: var(--navbar-bg-color);
   transition: background 0.5s;
   will-change: background;
-
-  [data-dark-mode] & {
-    background: #1e1e1e;
-  }
 }
 
 .container {
@@ -31,18 +27,14 @@
   padding: 0 1rem;
   margin-left: auto;
   outline: 0;
-  color: #fff;
+  color: var(--night-mode-toggle-color);
   cursor: pointer;
-
-  [data-dark-mode] & {
-    color: rgba(#fff, 0.88);
-  }
 }
 
 .navLink {
   position: relative;
   display: inline-block;
-  color: mix(#e74c3c, #fff, 40%);
+  color: var(--navbar-link-text-color);
   text-decoration: none;
   padding: 0 1rem;
   height: 3rem;
@@ -51,14 +43,10 @@
   overflow: hidden;
   transition: color 0.3s ease;
 
-  [data-dark-mode] & {
-    color: rgba(#fff, 0.6);
-  }
-
   &:after {
     content: '';
     position: absolute;
-    background: rgba(#fff, 0.87);
+    background: var(--navbar-link-indicator-color);
     bottom: 0;
     left: 1rem;
     right: 1rem;
@@ -66,19 +54,11 @@
     transform: translateY(100%);
     transition: transform 0.3s ease;
     will-change: transform;
-
-    [data-dark-mode] & {
-      background: rgba(#fff, 0.87);
-    }
   }
 
   &.isActive,
   &:not(.isLogo):hover {
-    color: #fff;
-
-    [data-dark-mode] & {
-      color: rgba(#fff, 0.87);
-    }
+    color: var(--navbar-link-hover-color);
 
     &:after {
       transform: translateY(0);
@@ -87,18 +67,10 @@
 }
 
 .isLogo {
-  color: #fff;
+  color: var(--navbar-logo-color);
   font-weight: bold;
 
-  [data-dark-mode] & {
-    color: rgba(#fff, 0.87);
-  }
-
   &:hover {
-    color: #fff;
-
-    [data-dark-mode] & {
-      color: rgba(#fff, 0.87);
-    }
+    color: var(--navbar-logo-color);
   }
 }

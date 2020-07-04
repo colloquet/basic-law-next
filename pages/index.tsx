@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import Head from 'next/head';
 import { X, Menu } from 'react-feather';
 
+import { TextNode } from '@/types/types';
 import basicLawData from '@/assets/basic-law.json';
 import useIsMobile from '@/hooks/useIsMobile';
 import PageTitle from '@/components/PageTitle/PageTitle';
@@ -12,13 +13,6 @@ import ParagraphNode from '@/components/ParagraphNode/ParagraphNode';
 import ListNode from '@/components/ListNode/ListNode';
 import Sidebar from '@/components/Sidebar/Sidebar';
 import css from './index.module.scss';
-
-export interface TextNode {
-  id: number;
-  type: string;
-  text?: string;
-  children?: TextNode[];
-}
 
 export default function HomePage() {
   const isMobile = useIsMobile();

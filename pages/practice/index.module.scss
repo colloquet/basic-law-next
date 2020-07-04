@@ -1,15 +1,11 @@
 .buttonGroup {
-  background: #f5f6f7;
+  background: var(--button-group-bg-color);
   border-radius: 8px;
   width: 100%;
   overflow: hidden;
   margin-bottom: 1rem;
   transition: background 0.5s;
   will-change: background;
-
-  [data-dark-mode] & {
-    background: #1e1e1e;
-  }
 }
 
 .button {
@@ -23,22 +19,13 @@
   text-decoration: none;
   text-align: center;
   transition: all 0.5s;
-  color: rgba(#000, 0.6);
+  color: var(--button-group-text-color);
   outline: none;
   cursor: pointer;
-
-  [data-dark-mode] & {
-    color: rgba(#fff, 0.6);
-  }
   
   &.isActive,
   &:hover {
-    background: #e6e6e6;
-    color: rgba(#000, 0.87);
-    
-    [data-dark-mode] & {
-      background: rgba(#fff, 0.08);
-      color: rgba(#fff, 0.87);
-    }
+    background: var(--button-group-active-bg-color);
+    color: var(--button-group-active-text-color)
   }
 }
