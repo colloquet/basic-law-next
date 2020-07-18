@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
         />
-        <meta name="theme-color" content={darkMode ? '#282828' : '#e74c3c'} />
+        {/* <meta name="theme-color" content={darkMode ? '#282828' : '#e74c3c'} /> */}
 
         <meta name="title" content="香港CRE基本法測試" />
         <meta name="author" content="Colloque Tsui" />
