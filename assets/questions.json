@@ -943,12 +943,12 @@
       {
         "id": 1,
         "text": "60",
-        "correct": false
+        "correct": true
       },
       {
         "id": 2,
         "text": "70",
-        "correct": true
+        "correct": false
       }
     ]
   },
