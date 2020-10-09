@@ -21,7 +21,8 @@ function AboutPage() {
         我整呢個網站主要係希望可以幫到將要考CRE或想了解基本法更多既人。資料來源都係黎自網絡，我幫大家整理好，有一個簡潔既介面，令大家係電話上都可以睇得舒服。
       </p>
       <p>
-        如有任何意見請 <a href="mailTo:colloquet@icloud.com">email</a> 我。
+        如有任何意見或者發現答案有錯漏，請{' '}
+        <a href="mailTo:colloquet@icloud.com">email</a> 我，我會盡快處理。
       </p>
     </div>
   );
