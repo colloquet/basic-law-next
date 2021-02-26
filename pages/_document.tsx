@@ -11,6 +11,21 @@ class MyDocument extends Document {
       <Html>
         <Head />
         <body>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              try {
+                var query = window.matchMedia("(prefers-color-scheme: dark)");
+                var darkMode = window.localStorage.getItem("darkMode");
+              
+                if ((darkMode === null && query.matches) || darkMode === "true") {
+                  document.body.setAttribute('data-dark-mode', '');
+                  document.documentElement.style.background = "#121212";
+                }
+              } catch (e) {}
+            `,
+            }}
+          />
           <div id="fb-root" />
           <script
             dangerouslySetInnerHTML={{
@@ -27,18 +42,6 @@ class MyDocument extends Document {
           />
           <Main />
           <NextScript />
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-              const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-              if (mediaQuery.matches) {
-                document.body.setAttribute('data-dark-mode', '');
-              } else {
-                document.body.removeAttribute('data-dark-mode');
-              }
-            `,
-            }}
-          />
           <script
             dangerouslySetInnerHTML={{
               __html: `
