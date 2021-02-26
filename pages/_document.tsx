@@ -30,6 +30,18 @@ class MyDocument extends Document {
           <script
             dangerouslySetInnerHTML={{
               __html: `
+              const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+              if (mediaQuery.matches) {
+                document.body.setAttribute('data-dark-mode', '');
+              } else {
+                document.body.removeAttribute('data-dark-mode');
+              }
+            `,
+            }}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
               (function (i, s, o, g, r, a, m) {
                 i['GoogleAnalyticsObject'] = r;
                 i[r] = i[r] || function () {
